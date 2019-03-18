@@ -1,0 +1,476 @@
+1.直方图的绘制
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall.bmp'; %确定所选取图片
+citywall = imread(imagepath);
+subplot(2,2,1);
+imhist(citywall)
+title('citywall直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall1.bmp'; %确定所选取图片
+[citywall1,map]=imread(imagepath);
+A1=ind2gray(citywall1,map);
+subplot(2,2,2);
+imhist(A1)
+title('citywall1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall2.bmp'; %确定所选取图片
+[citywall2,map]=imread(imagepath);
+A2=ind2gray(citywall2,map);
+subplot(2,2,3);
+imhist(A2)
+title('citywall2直方图');
+————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena.bmp'; %确定所选取图片
+lena = imread(imagepath);
+subplot(2,2,1);
+imhist(lena)
+title('lena直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena1.bmp'; %确定所选取图片
+[lena1,map]=imread(imagepath);
+A1=ind2gray(lena1,map);
+subplot(2,2,2);
+imhist(A1)
+title('lena1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena2.bmp'; %确定所选取图片
+[lena2,map]=imread(imagepath);
+A2=ind2gray(lena2,map);
+subplot(2,2,3);
+imhist(A2)
+title('lena2直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena4.bmp'; %确定所选取图片
+[lena4,map]=imread(imagepath);
+A3=ind2gray(lena4,map);
+subplot(2,2,4);
+imhist(A3)
+title('lena4直方图');
+————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain.bmp'; %确定所选取图片
+elain = imread(imagepath);
+subplot(2,2,1);
+imhist(elain)
+title('elain直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain1.bmp'; %确定所选取图片
+[elain1,map]=imread(imagepath);%索引图像读取
+A1=ind2gray(elain1,map);%转为灰度图像
+subplot(2,2,2);
+imhist(A1)
+title('elain1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain2.bmp'; %确定所选取图片
+[elain3,map]=imread(imagepath);%索引图像读取
+A2=ind2gray(elain3,map);%转为灰度图像
+subplot(2,2,3);
+imhist(A2)
+title('elain2直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain3.bmp'; %确定所选取图片
+[elain3,map]=imread(imagepath);%索引图像读取
+A3=ind2gray(elain3,map);%转为灰度图像
+subplot(2,2,4);
+imhist(A3)
+title('elain3直方图');
+——————————————————————————————————————————————————————————————————————————————————————————————————
+imagepath = 'F:\Digital Image Processing\work\The third\woman.bmp'; %确定所选取图片
+woman = imread(imagepath);
+subplot(2,2,1);
+imhist(woman)
+title('woman直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman1.bmp'; %确定所选取图片
+[woman1,map]=imread(imagepath);
+A1=ind2gray(woman1,map);
+subplot(2,2,2);
+imhist(A1)
+title('woman1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman2.bmp'; %确定所选取图片
+[woman2,map]=imread(imagepath);
+A2=ind2gray(woman2,map);
+subplot(2,2,3);
+imhist(A2)
+title('woman2直方图');
+——————————————————————————————————————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————————————————————————————————————
+
+2.直方图均衡化
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall.bmp'; %确定所选取图片
+citywall = imread(imagepath);
+citywall_eq = histeq(citywall);
+figure(1)
+subplot(1,2,1);
+imhist(citywall_eq)
+title('citywall-eq直方图');
+subplot(1,2,2);
+imshow(citywall_eq)
+title('citywall-eq')
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall1.bmp'; %确定所选取图片
+[citywall1,map] = imread(imagepath);
+A1=ind2gray(citywall1,map);
+citywall1_eq = histeq(A1);
+figure(2)
+subplot(1,2,1);
+imhist(citywall1_eq,map)
+title('citywall1-eq直方图');
+subplot(1,2,2);
+imshow(citywall1_eq)
+title('citywall1-eq')
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall2.bmp'; %确定所选取图片
+[citywall2,map] = imread(imagepath);
+A2=ind2gray(citywall2,map);
+citywall2_eq = histeq(A2);
+figure(3)
+subplot(1,2,1);
+imhist(citywall2_eq,map)
+title('citywall2-eq直方图');
+subplot(1,2,2);
+imshow(citywall2_eq)
+title('citywall2-eq')
+————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain.bmp'; %确定所选取图片
+elain = imread(imagepath);
+elain_eq = histeq(elain);
+figure(1)
+subplot(1,2,1);
+imhist(elain_eq)
+title('elain-eq直方图');
+subplot(1,2,2);
+imshow(elain_eq)
+title('elain-eq')
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain1.bmp'; %确定所选取图片
+[elain1,map] = imread(imagepath);
+A1 = ind2gray(elain1,map);
+elain1_eq = histeq(A1);
+figure(2)
+subplot(1,2,1);
+imhist(elain1_eq)
+title('elain1-eq直方图');
+subplot(1,2,2);
+imshow(elain1_eq)
+title('elain1-eq')
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain2.bmp'; %确定所选取图片
+[elain2,map] = imread(imagepath);
+A2 = ind2gray(elain2,map);
+elain2_eq = histeq(A2);
+figure(3)
+subplot(1,2,1);
+imhist(elain2_eq)
+title('elain2-eq直方图');
+subplot(1,2,2);
+imshow(elain2_eq)
+title('elain2-eq')
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain3.bmp'; %确定所选取图片
+[elain3,map] = imread(imagepath);
+A3 = ind2gray(elain3,map);
+elain3_eq = histeq(A3);
+figure(4)
+subplot(1,2,1);
+imhist(elain3_eq)
+title('elain3-eq直方图');
+subplot(1,2,2);
+imshow(elain3_eq)
+title('elain3-eq')
+————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena.bmp'; %确定所选取图片
+lena = imread(imagepath);
+lena_eq = histeq(lena);
+figure(1)
+subplot(1,2,1);
+imhist(lena_eq)
+title('lena-eq直方图');
+subplot(1,2,2);
+imshow(lena_eq)
+title('lena-eq');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena1.bmp'; %确定所选取图片
+[lena1,map] = imread(imagepath);
+A1 = ind2gray(lena1,map);
+lena1_eq = histeq(A1);
+figure(2)
+subplot(1,2,1);
+imhist(lena1_eq)
+title('lena1-eq直方图');
+subplot(1,2,2);
+imshow(lena1_eq)
+title('lena1-eq');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena2.bmp'; %确定所选取图片
+[lena2,map] = imread(imagepath);
+A2 = ind2gray(lena2,map);
+lena2_eq = histeq(A2);
+figure(3)
+subplot(1,2,1);
+imhist(lena2_eq)
+title('lena2-eq直方图');
+subplot(1,2,2);
+imshow(lena2_eq)
+title('lena2-eq');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena4.bmp'; %确定所选取图片
+[lena4,map] = imread(imagepath);
+A3 = ind2gray(lena4,map);
+lena4_eq = histeq(A3);
+figure(4)
+subplot(1,2,1);
+imhist(lena4_eq);
+title('lena4-eq直方图');
+subplot(1,2,2);
+imshow(lena4_eq)
+title('lena4-eq');
+————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman.bmp'; %确定所选取图片
+woman = imread(imagepath);
+woman_eq = histeq(woman);
+figure(1)
+subplot(1,2,1);
+imhist(woman_eq)
+title('woman-eq直方图');
+subplot(1,2,2);
+imshow(woman_eq)
+title('woman-eq')
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman1.bmp'; %确定所选取图片
+[woman1,map] = imread(imagepath);
+A1=ind2gray(woman1,map);
+woman1_eq = histeq(A1);
+figure(2)
+subplot(1,2,1);
+imhist(woman1_eq)
+title('woman1-eq直方图');
+subplot(1,2,2);
+imshow(woman1_eq)
+title('woman1-eq')
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman2.bmp'; %确定所选取图片
+[woman2,map] = imread(imagepath);
+A2=ind2gray(woman2,map);
+woman2_eq = histeq(A2);
+figure(3)
+subplot(1,2,1);
+imhist(woman2_eq)
+title('woman2-eq直方图');
+subplot(1,2,2);
+imshow(woman2_eq)
+title('woman2-eq')
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+3.直方图匹配
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall.bmp'; %确定所选取图片
+citywall = imread(imagepath);
+hgram = imhist(citywall);%原图当模板
+imagepath = 'F:\Digital Image Processing\work\The third\citywall1.bmp'; %确定所选取图片
+[citywall1,map] = imread(imagepath);
+A1 = ind2gray(citywall1,map);
+citywall1_new = histeq(A1,hgram);%直方图匹配（直方图规范化）
+figure(1)
+subplot(1,2,1);
+imshow(citywall1_new)
+title('匹配后的citywall1图像');
+subplot(1,2,2);
+imhist(citywall1_new)
+title('匹配后的citywall1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\citywall2.bmp'; %确定所选取图片
+[citywall2,map] = imread(imagepath);
+A2 = ind2gray(citywall2,map);
+citywall2_new = histeq(A2,hgram);%直方图匹配（直方图规范化)
+figure(2)
+subplot(1,2,1);
+imshow(citywall2_new)
+title('匹配后的citywall2图像');
+subplot(1,2,2);
+imhist(citywall2_new)
+title('匹配后的citywall2直方图');
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain.bmp'; %确定所选取图片
+elain = imread(imagepath);
+hgram = imhist(elain);%原图当模板
+imagepath = 'F:\Digital Image Processing\work\The third\elain1.bmp'; %确定所选取图片
+[elain1,map] = imread(imagepath);
+A1 = ind2gray(elain1,map);
+elain1_new = histeq(A1,hgram);%直方图匹配（直方图规范化
+figure(1)
+subplot(1,2,1);
+imshow(elain1_new)
+title('匹配后的elain1图像');
+subplot(1,2,2);
+imhist(elain1_new)
+title('匹配后的elain1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain2.bmp'; %确定所选取图片
+[elain2,map] = imread(imagepath);
+A2 = ind2gray(elain2,map);
+elain2_new = histeq(A2,hgram);%直方图匹配（直方图规范化
+figure(2)
+subplot(1,2,1);
+imshow(elain2_new)
+title('匹配后的elain2图像');
+subplot(1,2,2);
+imhist(elain2_new)
+title('匹配后的elain2直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain3.bmp'; %确定所选取图片
+[elain3,map] = imread(imagepath);
+A3 = ind2gray(elain3,map);
+elain3_new = histeq(A3,hgram);%直方图匹配（直方图规范化)
+figure(3)
+subplot(1,2,1);
+imshow(elain3_new)
+title('匹配后的elain3图像');
+subplot(1,2,2);
+imhist(elain3_new)
+title('匹配后的elain3直方图');
+—————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena.bmp'; %确定所选取图片
+lena = imread(imagepath);
+hgram = imhist(lena);%原图当模板
+imagepath = 'F:\Digital Image Processing\work\The third\lena1.bmp'; %确定所选取图片
+[lena1,map] = imread(imagepath);
+A1 = ind2gray(lena1,map);
+lena1_new = histeq(A1,hgram);%直方图匹配（直方图规范化)
+figure(1)
+subplot(1,2,1);
+imshow(lena1_new)
+title('匹配后的lena1图像');
+subplot(1,2,2);
+imhist(lena1_new)
+title('匹配后的lena1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena2.bmp'; %确定所选取图片
+[lena2,map] = imread(imagepath);
+A2 = ind2gray(lena2,map);
+lena2_new = histeq(A2,hgram);%直方图匹配（直方图规范化
+figure(2)
+subplot(1,2,1);
+imshow(lena2_new)
+title('匹配后的lena2图像');
+subplot(1,2,2);
+imhist(lena2_new)
+title('匹配后的lena2直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena4.bmp'; %确定所选取图片
+[lena4,map] = imread(imagepath);
+A3 = ind2gray(lena4,map);
+lena4_new = histeq(A3,hgram);%直方图匹配（直方图规范化
+figure(3)
+subplot(1,2,1);
+imshow(lena4_new)
+title('匹配后的lena4图像');
+subplot(1,2,2);
+imhist(lena4_new)
+title('匹配后的lena4直方图');
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman.bmp'; %确定所选取图片
+woman = imread(imagepath);
+hgram = imhist(woman);%原图当模板
+imagepath = 'F:\Digital Image Processing\work\The third\woman1.bmp'; %确定所选取图片
+[woman1,map] = imread(imagepath);
+A1 = ind2gray(woman1,map);
+woman1_new = histeq(A1,hgram);%直方图匹配（直方图规范化)
+figure(1)
+subplot(1,2,1);
+imshow(woman1_new)
+title('匹配后的woman1图像');
+subplot(1,2,2);
+imhist(woman1_new)
+title('匹配后的woman1直方图');
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman2.bmp'; %确定所选取图片
+[woman2,map] = imread(imagepath);
+A2 = ind2gray(woman2,map);
+woman2_new = histeq(A2,hgram);%直方图匹配（直方图规范化
+figure(2)
+subplot(1,2,1);
+imshow(woman2_new)
+title('匹配后的woman2图像');
+subplot(1,2,2);
+imhist(woman2_new)
+title('匹配后的woman2直方图');
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+4.局部直方图增强
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain.bmp'; %确定所选取图片
+elain = imread(imagepath);
+n=7;%模板大小
+a(1:n,1:n)=1; %模板小于图像
+image=wextend('2D','sym',elain,n);%对图像进行拓展扩展
+[M,N]=size(image);%%扩展后的图像大小
+W=double(image);
+jubu_image=W;
+for i=n+1:M-n
+    for j=n+1:N-n
+        m=W(i:i+(n-1),j:j+(n-1)).*a(1:n,1:n);%取出x1中从(i,j)开始的n行n列元素与模板相乘
+        k=histeq(uint8(m));%对局部进行直方图均衡
+        lll=double(k);
+        jubu_image(i,j)=lll(1,1); %将均衡后中心点的像素值赋给原图对应点的元素，未被赋值的元素取原值
+    end
+end
+Elain=jubu_image(n+1:M-n,n+1:N-n);%%均衡化后，取原图像大小
+Elain=uint8(Elain);
+imshow(Elain)
+title('局部直方图增强后的图elain'); %显示均衡后的图象
+————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\lena.bmp'; %确定所选取图片
+lena = imread(imagepath);
+n=7;%模板大小
+a(1:n,1:n)=1; %模板小于图像
+image=wextend('2D','sym',lena,n);%对图像进行拓展扩展
+[M,N]=size(image);%%扩展后的图像大小
+W=double(image);
+jubu_image=W;
+for i=n+1:M-n
+    for j=n+1:N-n
+        m=W(i:i+(n-1),j:j+(n-1)).*a(1:n,1:n);%取出x1中从(i,j)开始的n行n列元素与模板相乘
+        k=histeq(uint8(m));%对局部进行直方图均衡
+        lll=double(k);
+        jubu_image(i,j)=lll(1,1); %将均衡后中心点的像素值赋给原图对应点的元素，未被赋值的元素取原值
+    end
+end
+Lena=jubu_image(n+1:M-n,n+1:N-n);%%均衡化后，取原图像大小
+Lena=uint8(Lena);
+imshow(Lena)
+title('局部直方图增强后的图lena'); %显示均衡后的图象
+——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+5.直方图分割
+
+imagepath = 'F:\Digital Image Processing\work\The third\elain.bmp'; %确定所选取图片
+elain = imread(imagepath);
+level = graythresh(elain);%采用最大类间方差法找到图片的一个适合的阈值
+BW = im2bw(elain,level);%利用阈值把灰度图像转化为二值图像
+imshow(BW)
+title('Otsu法阈值分割图像');
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+imagepath = 'F:\Digital Image Processing\work\The third\woman.bmp'; %确定所选取图片
+woman = imread(imagepath);
+level = graythresh(woman);%采用最大类间方差法找到图片的一个适合的阈值
+BW = im2bw(woman,level);%利用阈值把灰度图像转化为二值图像
+imshow(BW)
+title('Otsu法阈值分割图像');
+
